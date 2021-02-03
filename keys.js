@@ -1,4 +1,6 @@
+require('dotenv').config(); 
+
 module.exports = {
-  MONGO_URI: "mongodb+srv://leonardo:34lFBUh3JMt6jbp6@cluster0.7l2jo.mongodb.net/test?retryWrites=true&w=majority",
-  JWT_SECRET: "sd7fh87a*7678ga67A76AGD39D9K@!665d4@wj*(e(2*9KD",
+  MONGO_URI: process.env.MONGO_URI,
+  JWT_SECRET: process.env.JWT_SECRET,
 };

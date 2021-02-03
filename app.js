@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const { MONGO_URI } = require("./keys");
-const fileUpload = require("express-fileupload"); 
+const fileUpload = require("express-fileupload");
 
 const PORT = process.env.PORT || 5000;
 
