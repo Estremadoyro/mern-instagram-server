@@ -60,7 +60,7 @@ router.get("/myposts", requireLogin, async (req, res) => {
   try {
     const post = await Post.find({ postedBy: req.user._id }).populate(
       "postedBy",
-      "_id name"
+      "_id username"
     );
     res.json({ post: post });
   } catch (error) {
