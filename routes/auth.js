@@ -35,9 +35,10 @@ router.post("/register", async (req, res) => {
 
     const checkUser = await User.findOne({ email: email });
     if (checkUser) {
-      return res.status(422).json({
-        error: "There is an account associated with this email already.",
+      res.status(422).json({
+        error: "There is an account associated with this email already",
       });
+      return;
     } else {
       const passHashed = await bcrypt.hash(password, 16);
       console.log(passHashed);
@@ -60,6 +61,9 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log(req.body);
+    console.log(email);
+    console.log(password);
     if (!email || !password) {
       res.status(422).json({ error: "Please, provide an email & password :)" });
       return;
